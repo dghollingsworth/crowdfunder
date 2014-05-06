@@ -1,23 +1,5 @@
-<%= form_for(@project) do |f| %>
-	
-	<div class="field">
-		<%= f.label :name %><br/>
-		<%= f.text_field :name %>
-	</div>
-	
-	<div class="field">
-		<%= f.label :desciption %><br/>
-		<%= f.text_area :description %>
-	</div>
-	
-	<div class="field">
-		<%= f.label :goal %><br/>
-		<%= f.text_field :goal %>
-	</div>
-	
-	<div class="field">
-		<%= f.label :deadline %><br/>
-		<%= f.date_select :deadline %>
-	</div>
+<h2>Make Changes</h2>
 
-<% end %>
+<div>
+	<%= render 'form' %>	
+</div>
