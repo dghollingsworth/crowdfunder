@@ -1,7 +1,8 @@
 <h1>Projects</h1>
 <% @project.each do |project| %>
+	
 	<div class="project">
-		<p><%= project.name %><br />
+		<p><%= link_to "#{project.name}", project_path(project.id) %><br />
 			<%= project.description %><br/>
 			<%= "$#{project.format_goal(project.goal)}" %><br />
 			<%= project.format_date(project.deadline) %><br/>

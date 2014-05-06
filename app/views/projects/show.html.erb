@@ -2,7 +2,7 @@
 
 <div>
 	<%= @project.description %><br/>
-	<%= @project.goal %><br/>
+	<%= "$#{@project.format_goal(@project.goal)}" %><br/>
 	<%= @project.format_date(@project.deadline) %><br/>
 
 	<%= link_to 'Edit', edit_project_path %> | <%= link_to 'Delete', @project, confirm: "Are you sure you want to delete this project?", method: :delete %>
