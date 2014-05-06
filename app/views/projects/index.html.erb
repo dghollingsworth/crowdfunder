@@ -3,7 +3,7 @@
 	<div class="project">
 		<p><%= project.name %><br />
 			<%= project.description %><br/>
-			<%= project.goal %><br />
+			<%= "$#{project.format_goal(project.goal)}" %><br />
 			<%= project.format_date(project.deadline) %><br/>
 		</p>
 

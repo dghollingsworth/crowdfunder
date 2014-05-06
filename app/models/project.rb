@@ -4,7 +4,9 @@ class Project < ActiveRecord::Base
 		deadline.strftime("%B %e %Y, %l %P")
 	end
 
-	def format_money
-
+	def format_goal(goal)
+		goal = goal.to_f
+		sprintf("%.2f", goal)
 	end
+
 end
