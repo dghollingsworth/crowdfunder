@@ -1,4 +1,4 @@
-<h1>Sessions#new</h1>
+
 <h1>Sign In</h1>
 
 <%= form_tag sessions_path do %>
@@ -10,12 +10,17 @@
   
   <div class="field">
     <%= label_tag :password %><br/>
-    <%= password_field_tag :crypted_password %>
+    <%= password_field_tag :password %>
   </div>
   
+  <div class="field">
+    <%= check_box_tag :remember_me, 1 %><br/>
+    <%= label_tag :remember_me %>
+  </div>
+
   
   <div class="field">
-    <%= submit_tag "Sign Up" %>
+    <%= submit_tag "Sign In" %>
   </div>
 
 <% end %>

@@ -1,15 +1,16 @@
 class SessionsController < ApplicationController
   def new
-
+    @user = User.new
   end
 
   def create
-    login(params[:email], params[:password], params[:remember_me])
-    if user
-      redirect_back_or_to root_url. :notice => "Logged in"
+    if @user = login(params[:email], params[:password], params[:remember_me])
+      # redirect_back_or_to(:projects, notice: 'Login successful')
+      redirect_to projects_path, notice: "Login successful"
     else
-      flash.now.alert = "email or password was invalid"
-      render :new
+
+      flash.now[:alert] = 'Login failed'
+      render action: 'new'
     end
   end
 

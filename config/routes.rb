@@ -4,6 +4,7 @@ Crowdfunder::Application.routes.draw do
   resources :users
   resources :sessions
 
-  
+  get 'login' => 'sessions#new', :as => :login
+  post 'logout' => 'sessions#destroy', :as => :logout
 
 end
