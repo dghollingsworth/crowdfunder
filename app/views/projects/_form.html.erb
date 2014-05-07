@@ -20,6 +20,14 @@
 		<%= f.label :deadline %><br/>
 		<%= f.date_select :deadline %>
 	</div>
+  <div id="gifts">
+    <%= f.fields_for :gifts do |gift| %>
+      <%= render 'gift_fields', :f => gift %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add gift', f, :gifts %>
+     </div>
+  </div>
 	<div class="field">
 		<%= f.submit %>
 	</div>
