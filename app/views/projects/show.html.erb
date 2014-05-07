@@ -4,6 +4,13 @@
 	<%= @project.description %><br/>
 	<%= "$#{@project.format_goal(@project.goal)}" %><br/>
 	<%= @project.format_date(@project.deadline) %><br/>
+  <% @project.gifts.each do |gift| %>
+    <div class="gift">
+      <%="Pledge $#{gift.amount} CAD or more"%><br/>
+      <%= gift.package %><br/>
+      <%= "Estimated delivery #{@project.format_date(gift.delivery)}" %><br/>
+    </div>
+    <% end %>
 
 	<%= link_to 'Edit', edit_project_path %> | <%= link_to 'Delete', @project, confirm: "Are you sure you want to delete this project?", method: :delete %>
 
