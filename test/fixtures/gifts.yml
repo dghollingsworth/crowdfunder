@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  package: MyString
+  delivery: 2014-05-07 15:31:58
+
+two:
+  amount: 1
+  package: MyString
+  delivery: 2014-05-07 15:31:58
