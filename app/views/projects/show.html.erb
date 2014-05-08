@@ -4,14 +4,26 @@
 	<%= @project.description %><br/>
 	<%= "$#{@project.format_goal(@project.goal)}" %><br/>
 	<%= @project.format_date(@project.deadline) %><br/>
-  <% @project.gifts.each do |gift| %>
-    <div class="gift">
-      <%="Pledge $#{gift.amount} CAD or more"%><br/>
-      <%= gift.package %><br/>
-      <%= "Estimated delivery #{@project.format_date(gift.delivery)}" %><br/>
-    </div>
+
+
+  <%= form_for([@project, @pledge]) do |f| %>
+      
+      <%= f.label :amount %>
+      <%= f.text_field :amount %>
+
+    <% @project.gifts.each do |gift| %>      
+        <div class="gift">
+          <%= f.radio_button(:gift_id ,"#{gift.id}")%>
+          
+          <%= "Pledge $#{gift.amount} CAD or more" %><br/>
+          <%= gift.package %><br/>
+          <%= "Estimated delivery #{@project.format_date(gift.delivery)}" %><br/>
+        </div>
     <% end %>
 
-	<%= link_to 'Edit', edit_project_path %> | <%= link_to 'Delete', @project, confirm: "Are you sure you want to delete this project?", method: :delete %>
+    <%= f.submit "pledge!" %>
+  <% end %>
+	
+  <%= link_to 'Edit', edit_project_path %> | <%= link_to 'Delete', @project, confirm: "Are you sure you want to delete this project?", method: :delete %>
 
 </div>

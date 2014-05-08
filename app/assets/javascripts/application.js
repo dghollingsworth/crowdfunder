@@ -15,3 +15,12 @@
 //= require turbolinks
 //= require cocoon
 //= require_tree .
+
+$(document).ready(function(){
+	$('.gift').submit(function(event){
+		event.preventDefault();
+		
+
+	});
+
+});

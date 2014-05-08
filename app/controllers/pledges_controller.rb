@@ -1,4 +1,7 @@
 class PledgesController < ApplicationController
+  before_filter :load_project
+
+
   # def new
   # 	@pledge = Pledge.new
   # end
@@ -6,6 +9,7 @@ class PledgesController < ApplicationController
   def create
   	@pledge = @project.pledges.build(pledge_params)
   	@pledge.user_id = current_user.id
+  	@pledge.amount = Gift.where("id = ?", @pledge.gift_id).take.amount
   	
   	respond_to do |format|
 	  	if @pledge.save
