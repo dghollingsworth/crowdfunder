@@ -15,4 +15,5 @@ class Project < ActiveRecord::Base
 		sprintf("%.2f", goal)
 	end
 
+	
 end

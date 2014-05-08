@@ -11,16 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require cocoon
 //= require_tree .
+//= require turbolinks
 
-$(document).ready(function(){
-	$('.gift').submit(function(event){
-		event.preventDefault();
-		
-
-	});
-
-});

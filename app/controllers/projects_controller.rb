@@ -8,6 +8,8 @@ class ProjectsController < ApplicationController
 	def show
 		@project = Project.find(params[:id])
 
+		@total = total_pledges
+		
 		if current_user
 			@pledge = @project.pledges.build
 		end
@@ -51,6 +53,10 @@ class ProjectsController < ApplicationController
 	private
 	def project_params
 		params.require(:project).permit(:name, :description, :goal, :deadline, gifts_attributes: [:id, :amount, :package, :delivery])
+	end
+
+	def total_pledges
+		@project.pledges.sum('amount')
 	end
 	
 end
