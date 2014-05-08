@@ -2,6 +2,10 @@ class Project < ActiveRecord::Base
   has_many :gifts
   accepts_nested_attributes_for :gifts, :reject_if => :all_blank, :allow_destroy => true
 
+  has_many :users, through: :pledges
+  has_many :pledges
+
+	
 	def format_date(deadline)
 		deadline.strftime("%B %e %Y, %l %P")
 	end
@@ -11,4 +15,5 @@ class Project < ActiveRecord::Base
 		sprintf("%.2f", goal)
 	end
 
+	
 end

@@ -12,7 +12,10 @@ class ApplicationController < ActionController::Base
   # app/controllers/user_sessions_controller.rb
   skip_before_filter :require_login, except: [:destroy]
 
+
+
   private
+  
   def not_authenticated
     redirect_to login_path, alert: "Please login first"
   end

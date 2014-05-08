@@ -1,14 +1,23 @@
 class ProjectsController < ApplicationController
 	def index
 		@project = Project.all
+
+
 	end
 
 	def show
 		@project = Project.find(params[:id])
+
+		@total = total_pledges
+		
+		if current_user
+			@pledge = @project.pledges.build
+		end
 	end
 
 	def create
 		@project = Project.new(project_params)
+
 		if @project.save
 			redirect_to project_path(@project)
 		else
@@ -44,6 +53,10 @@ class ProjectsController < ApplicationController
 	private
 	def project_params
 		params.require(:project).permit(:name, :description, :goal, :deadline, gifts_attributes: [:id, :amount, :package, :delivery])
+	end
+
+	def total_pledges
+		@project.pledges.sum('amount')
 	end
 	
 end
