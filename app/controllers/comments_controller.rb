@@ -11,6 +11,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @commentable.comments.build(comment_params)
+    
+    @comments = @commentable.comments
+    
     respond_to do |format|
       if @comment.save
         format.html {redirect_to polymorphic_path(@commentable), notice: "Message added." }

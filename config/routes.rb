@@ -2,7 +2,7 @@ Crowdfunder::Application.routes.draw do
   
   resources :projects do 
   	resources :pledges, only: [:new, :create, :show]
-    resources :comments
+      resources :comments
   end
   
   resources :users do 

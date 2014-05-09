@@ -13,7 +13,7 @@ class PledgesController < ApplicationController
   	@pledge.amount = Gift.where("id = ?", @pledge.gift_id).take.amount
   	
     
-  	puts "********************#{@total}"
+  	
     respond_to do |format|
 	  	if @pledge.save
         @total = total_pledges
