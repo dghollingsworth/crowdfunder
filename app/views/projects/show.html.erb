@@ -27,8 +27,12 @@
     <%= f.submit "pledge!" %>
   <% end %>
 
+  <div class="comments_form">
+    <%= render partial: "comment_form"%>
+    </div>
+
   <div class="comments">
-  <%= render partial: "comments"%>
+    <%= render partial: "comments"%>
   </div>
 
 
