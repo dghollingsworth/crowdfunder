@@ -1,0 +1,6 @@
+<% @comments.each do |comment| %>
+<div class="comment">
+  <p><%= comment.message %></p>
+  <p>posted by: <%= current_user.email %></p>
+</div>
+<%end%>

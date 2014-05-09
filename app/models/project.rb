@@ -5,6 +5,8 @@ class Project < ActiveRecord::Base
   has_many :users, through: :pledges
   has_many :pledges
 
+  has_many :comments, as: :commentable
+
 	
 	def format_date(deadline)
 		deadline.strftime("%B %e %Y, %l %P")

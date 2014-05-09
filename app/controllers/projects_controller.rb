@@ -1,8 +1,9 @@
 class ProjectsController < ApplicationController
+
+	before_filter :load_commentable
+
 	def index
 		@project = Project.all
-
-
 	end
 
 	def show
@@ -12,6 +13,7 @@ class ProjectsController < ApplicationController
 		
 		if current_user
 			@pledge = @project.pledges.build
+			@comments = @commentable.comments
 		end
 	end
 
