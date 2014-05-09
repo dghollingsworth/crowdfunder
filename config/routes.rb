@@ -2,11 +2,12 @@ Crowdfunder::Application.routes.draw do
   
   resources :projects do 
   	resources :pledges, only: [:new, :create, :show]
-      resources :comments
+    resources :comments
   end
   
   resources :users do 
   	resources :pledges, only: [:show, :destroy]
+    resources :comments
   end
 
 

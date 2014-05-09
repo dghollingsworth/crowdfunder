@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :load_commentable
+
   def new
     @user = User.new
   end
@@ -10,6 +12,12 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @comments = @commentable.comments
+    @comment = @commentable.comments.build
   end
 
   private 
