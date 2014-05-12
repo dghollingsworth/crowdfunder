@@ -1,5 +1,7 @@
 Crowdfunder::Application.routes.draw do
-  
+  root 'projects#index'
+
+
   resources :projects do 
   	resources :pledges, only: [:new, :create, :show]
     resources :comments

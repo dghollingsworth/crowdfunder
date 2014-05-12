@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-	before_filter :load_commentable
+	before_filter :load_commentable, except: [:index, :new, :create]
 
 	def index
 		@project = Project.all

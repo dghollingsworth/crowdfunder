@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    redirect_to projects_path
+    redirect_to projects_path, notice: "Logged out!"
   end
 
 

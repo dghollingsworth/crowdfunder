@@ -36,10 +36,14 @@ end
 
 gem 'sorcery'
 
+gem 'zurb-foundation'
+
 gem 'jquery-turbolinks'
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
+
+gem 'cocoon'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -51,3 +55,5 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'debugger', group: [:development, :test]
 
 gem "cocoon"
+
+gem 'faker'
