@@ -1,0 +1,1 @@
+Crowdfunder was done primarily with group members until the core functionality was complete.  We made it our main priority to have a solid database model and have lots of working ajax.  That we did accomplish but the site design is not nearly fully flushed out.  
